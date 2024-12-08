@@ -106,7 +106,16 @@ namespace PasswordManagerDotNet
                 Console.WriteLine("Preview? (Y/N)");
                 if (Console.ReadLine() == "Y")
                 {
-                    RetrieveCredentials();
+                    Console.WriteLine("Enter password");
+                    //RetrieveCredentials();
+                    if (AuthoriseUser(Console.ReadLine()))
+                    {
+                        RetrieveCredentials();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect password");
+                    }
                 }
             }
             else
